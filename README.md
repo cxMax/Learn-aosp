@@ -1,28 +1,28 @@
 # Learn-aosp
 Learn Android Open Source Project repository
 
-### Download AOSP repository : 
+## Download AOSP repository : 
 official tutorial :    
 https://source.android.com/source/downloading
 
 the solution of downloading under Chinese Great Wall  :    
 https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/
 
-### Build AOSP
+## Build AOSP
 official tutorial :   
 https://source.android.com/source/requirements
 
 blog :  
 http://www.jianshu.com/p/367f0886e62b
 
-### import android source code into android studio :
+## import android source code into android studio :
 
 blog :  
 http://androidperformance.com/2015/01/16/view-android-source-code-with-androidstudio.html  
 http://www.jianshu.com/p/fb16fa459acf
 
 
-### License
+## License
  Copyright (C) 2016 Amit Shekhar
    Copyright (C) 2011 Android Open Source Project
 
