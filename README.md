@@ -20,6 +20,10 @@ blog :
 http://androidperformance.com/2015/01/16/view-android-source-code-with-androidstudio.html  
 http://www.jianshu.com/p/fb16fa459acf
 
+## solutions of error
+source not found :  
+http://www.jianshu.com/p/f0b4cbc0596c
+
 # highly recommend the below articles which are about AOSP research
 https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis
 
