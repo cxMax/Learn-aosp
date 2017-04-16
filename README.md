@@ -1,6 +1,5 @@
 # Learn-aosp
 Learn Android Open Source Project repository
-
 ## Download AOSP repository : 
 official tutorial :    
 https://source.android.com/source/downloading
@@ -21,6 +20,8 @@ blog :
 http://androidperformance.com/2015/01/16/view-android-source-code-with-androidstudio.html  
 http://www.jianshu.com/p/fb16fa459acf
 
+# highly recommend the below articles which are about AOSP research
+https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis
 
 ## License
  Copyright (C) 2016 Amit Shekhar
