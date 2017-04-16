@@ -2,23 +2,23 @@
 Learn Android Open Source Project repository
 
 ### Download AOSP repository : 
-<b>official tutorial : </b>   
+official tutorial :    
 https://source.android.com/source/downloading
 
-<b>the solution of downloading under Chinese Great Wall  : </b>    
+the solution of downloading under Chinese Great Wall  :    
 https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/
 
 ### Build AOSP
-<b>official tutorial : </b>  
+official tutorial :   
 https://source.android.com/source/requirements
 
-<b>blog :</b>  
+blog :  
 http://www.jianshu.com/p/367f0886e62b
 
 ### import android source code into android studio :
 
-<b>blog :</b>  
-http://androidperformance.com/2015/01/16/view-android-source-code-with-androidstudio.html
+blog :  
+http://androidperformance.com/2015/01/16/view-android-source-code-with-androidstudio.html  
 http://www.jianshu.com/p/fb16fa459acf
 
 
