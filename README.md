@@ -27,6 +27,9 @@ http://www.jianshu.com/p/f0b4cbc0596c
 # highly recommend the below articles which are about AOSP research
 https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis
 
+# study guide
+http://blog.csdn.net/luoshengyang/article/details/8923485/
+
 ## License
    Copyright (C) 2017 cxMax  
    Copyright (C) 2017 Learn-aosp
