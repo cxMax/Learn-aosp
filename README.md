@@ -28,8 +28,8 @@ http://www.jianshu.com/p/f0b4cbc0596c
 https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis
 
 ## License
- Copyright (C) 2016 Amit Shekhar
-   Copyright (C) 2011 Android Open Source Project
+   Copyright (C) 2017 cxMax  
+   Copyright (C) 2017 Learn-aosp
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
