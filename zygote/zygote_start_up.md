@@ -1,0 +1,33 @@
+## zygote
+
+app_main.cpp
+1. 设置了app_process启动参数--zygote和--start-system-server , AppRuntime.start()
+
+2. AndroidRuntime.start() , 启动Android系统运行时库，它主要做了三件事情，一是调用函数startVM启动虚拟机，二是调用函数startReg注册JNI方法，三是调用了com.android.internal.os.ZygoteInit类的main函数
+
+3. ZygoteInit.main() ,   
+一个调用registerZygoteSocket函数创建了一个socket接口，用来和ActivityManagerService通讯，  
+二是调用startSystemServer函数来启动SystemServer组件，  
+三是调用runSelectLoopMode函数进入一个无限循环在前面创建的socket接口上等待ActivityManagerService请求创建新的应用程序进程。
+
+ps : ActivityManagerService是通过Process.start函数来创建一个新的进程的，而Process.start函数会首先通过Socket连接到Zygote进程中，最终由Zygote进程来完成创建新的应用程序进程，而Process类是通过openZygoteSocketIfNeeded函数来连接到Zygote进程中的Socket的
+
+4. ZygoteInit.startSystemServer
+Zygote.forkSystemServer函数来创建一个新的进程来启动SystemServer组件，返回值pid等0的地方就是新的进程要执行的路径，即新创建的进程会执行handleSystemServerProcess函数
+
+5. ZygoteInit.handleSystemServerProcess
+由于由Zygote进程创建的子进程会继承Zygote进程在前面Step 4中创建的Socket文件描述符，而这里的子进程又不会用到它，因此，这里就调用closeServerSocket函数来关闭它。这个函数接着调用RuntimeInit.zygoteInit函数来进一步执行启动SystemServer组件的操作
+
+6. RuntimeInit.zygoteInit
+一个是调用zygoteInitNative函数来执行一个Binder进程间通信机制的初始化工作，这个工作完成之后，这个进程中的Binder对象就可以方便地进行进程间通信了
+ 
+7. SystemServer.main
+会创建一个ServerThread线程对象来执行一些系统关键服务的启动操作
+
+8. ZygoteInit.runSelectLoopMode
+这就是在等待ActivityManagerService来连接这个Socket，然后调用ZygoteConnection.runOnce函数来创建新的应用程序
+
+总结 :
+1. 系统启动时init进程会创建Zygote进程，Zygote进程负责后续Android应用程序框架层的其它进程的创建和启动工作
+2. Zygote进程会首先创建一个SystemServer进程，SystemServer进程负责启动系统的关键服务，如包管理服务PackageManagerService和应用程序组件管理服务ActivityManagerService
+3. 当我们需要启动一个Android应用程序时，ActivityManagerService会通过Socket进程间通信机制，通知Zygote进程为这个应用程序创建一个新的进程
